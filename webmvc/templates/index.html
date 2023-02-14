@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block title %} Formulaire d'inscription {% endblock %}
+{% block content %}
+
+<div class="box title">
+    <form action="" method="POST">
+        <h2 align="center">Register</h2><br>
+        {% if message %}
+            <div class="alert alert-danger">{{ message }}</div>
+        {% endif %}
+        <table cellpadding="5" cellspacing="0" align="center" class="table-responsive">
+            <tbody>
+                <tr>
+                    <td>
+                        <label for="surname" id="txt">Nam</label>
+                    </td>
+                    <td>
+                        <input type="text" id="surname" name="surname" class="form-control" placeholder="enter your surname"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="first_name">First name</label>
+                    </td>
+                    <td>
+                        <input type="text" id="first_name" name="first_name" class="form-control" placeholder="enter your first name"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="email">Adresse mail</label>
+                    </td>
+                    <td>
+                        <input type="email" id="email" name="email" class="form-control" placeholder="name@exemple.com"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="password">Password</label>
+                    </td>
+                    <td>
+                        <input type="password" id="password" name="password" class="form-control" placeholder="enter your password"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="confirm_password">Validate password</label>
+                    </td>
+                    <td>
+                        <input type="password" id="confirm_password" name="confirm_password" class="form-control" placeholder="validate password"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center"><br>
+                        <button type="submit" class="btn btn-dark">Submit</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <br><a href="/">I have an account</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+{% endblock content %}

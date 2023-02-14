@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+<div class="body">
+    <section class="text">
+        <marquee scrollamount="10" scrolldelay="10">
+            <h2>Bienvenu sur notre site web créer en utilisant le framwork flask et dont l'autheur est: TEPE Paulin</h2>
+        </marquee>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      Bonjour as tous, soyez les bien venue sur cette page d'espérimentation. Bien que étant débutant dans le domaine de création de page j'espère que pour un début je vais vous impressionné et que ce que je vais vous présenté en se jour sauras assez distraiant.<br><br>
+            <center>    <video src="/static/Presentation.MP4" controls="controls" width="700" id="troixième"></video>   </center><br><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      Voici une petite liste montrant nos dernier abonné:
+            <br><br>
+            {% if users %}
+                <table class="table text" border="1" align="center" width="50%">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>NOM</th>
+                            <th>PRENOM</th>
+                            <th>MAIL</th>
+                            <th>PASSWORD</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for user in users %}
+                            <tr>
+                                <td>{{ user.id }}</td>
+                                <td>{{ user.nom }}</td>
+                                <td>{{ user.prenom }}</td>
+                                <td>{{ user.mail }}</td>
+                                <td>{{ user.password }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <p>Pas de donnée ....</p>
+            {% endif %}
+            
+            <br><br>
+            <a href="mailto:mailto@gmail.com">Me contacter</a>
+            <a href="/logout">Logout</a>
+        </p>
+    </section>
+
+    
+
+    <div class="overlo">    </div>  
+</div>
+{% endblock content %}

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %} login {% endblock %}
+{% block content %}
+
+<div class="box title">
+    <form action="/" method="POST">
+        <h3 align="center">Connection</h3>
+        {% if message %}
+            <div class="alert alert-info">{{ message }}</div>
+        {% endif %}
+        <table align="center">
+            <tr>
+                <td>
+                    <label for="email" class="accordion-body">Email Adress</label>
+                </td>
+                <td>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="password" class="accordion-body">Password</label>
+                </td>
+                <td>
+                    <input type="password" id="password" name="password" class="form-control" placeholder="Enter your Password"/>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"> <br>
+                    <center> <button type="submit" class="btn btn-primary">Sign In</button> </center>
+                </td>
+            </tr>
+            <tr>
+                <td><br><br>
+                    <a href="/index">Register</a>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+{% endblock %}
